@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.9.7 on win32)" generated="20210901 21:50:20.132" rpa="false" schemaversion="2">
+<suite id="s1" name="createCharacters" source="C:\projects\automacao_api_marvel\createCharacters.robot">
+<test id="s1-t1" name="Deve cadastrar um personagem">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{usuario}</var>
+<arg>email=lucas.pdsantos11@gmail.com</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20210901 21:50:20.580" level="INFO">&amp;{usuario} = { email=lucas.pdsantos11@gmail.com }</msg>
+<status status="PASS" starttime="20210901 21:50:20.580" endtime="20210901 21:50:20.580"/>
+</kw>
+<kw name="POST" library="RequestsLibrary">
+<var>${response}</var>
+<arg>http://marvel.qaninja.academy/accounts</arg>
+<arg>json=${usuario}</arg>
+<doc>Sends a POST request.</doc>
+<msg timestamp="20210901 21:50:21.219" level="INFO">POST Request : url=http://marvel.qaninja.academy/accounts 
+ path_url=/accounts 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '39', 'Content-Type': 'application/json'} 
+ body=b'{"email": "lucas.pdsantos11@gmail.com"}' 
+ </msg>
+<msg timestamp="20210901 21:50:21.220" level="INFO">POST Response : url=http://marvel.qaninja.academy/accounts 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '41', 'Etag': 'W/"29-nHaR1eEq+qPILqgqvqT2UjXiuVU"', 'Date': 'Thu, 02 Sep 2021 00:50:20 GMT', 'Via': '1.1 vegur'} 
+ body={"client_key":"61300d22874ab200165f08e3"} 
+ </msg>
+<msg timestamp="20210901 21:50:21.221" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210901 21:50:20.581" endtime="20210901 21:50:21.221"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${client_key}</var>
+<arg>${response.json()}[client_key]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210901 21:50:21.227" level="INFO">${client_key} = 61300d22874ab200165f08e3</msg>
+<status status="PASS" starttime="20210901 21:50:21.224" endtime="20210901 21:50:21.227"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{headers}</var>
+<arg>client_key=${client_key}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20210901 21:50:21.231" level="INFO">&amp;{headers} = { client_key=61300d22874ab200165f08e3 }</msg>
+<status status="PASS" starttime="20210901 21:50:21.229" endtime="20210901 21:50:21.231"/>
+</kw>
+<kw name="Factory Thanos" library="thanos">
+<var>${personagem}</var>
+<msg timestamp="20210901 21:50:21.234" level="FAIL">NameError: name 'false' is not defined</msg>
+<status status="FAIL" starttime="20210901 21:50:21.232" endtime="20210901 21:50:21.235"/>
+</kw>
+<kw name="POST" library="RequestsLibrary">
+<var>${response}</var>
+<arg>http://marvel.qaninja.academy/characters</arg>
+<arg>json={personagem}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request.</doc>
+<status status="NOT RUN" starttime="20210901 21:50:21.236" endtime="20210901 21:50:21.236"/>
+</kw>
+<status status="FAIL" starttime="20210901 21:50:20.579" endtime="20210901 21:50:21.237">NameError: name 'false' is not defined</status>
+</test>
+<doc>Suite de Testes do cadastro de personagens da API Marvel</doc>
+<status status="FAIL" starttime="20210901 21:50:20.135" endtime="20210901 21:50:21.240"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="createCharacters">createCharacters</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
