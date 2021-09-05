@@ -13,3 +13,16 @@ def factory_spiderMan():
 	    "team": "Vingadores",
 	    "active": True
     }
+
+def factory_tonyStark():
+
+    return {
+		#O .faker gera um nome randomico
+        "name": "Tony Stark",
+	    "aliases": "Homem de Ferro",
+	    "age": 45,
+	    "team": "Vingadores",
+	    "active": False
+    }
+
+	

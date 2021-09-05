@@ -10,6 +10,14 @@ Resource            routes/characters.robot
 ${API_URL}          http://marvel.qaninja.academy
 
 *Keywords*
+
+Super Setup
+
+    [Arguments]         ${email}
+    #Funciona como um gancho permitindo que a client_key seja usada em varios testes/especificos
+    Set Client Key      ${email}
+    Back To The Past
+
 Set Client Key
     [Arguments]         ${email}
 

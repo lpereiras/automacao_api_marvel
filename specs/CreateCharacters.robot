@@ -5,16 +5,14 @@ Documentation       Suite de Teste do cadastro de personagens na API da Marvel
 #Palavra reservada para importacao do arquivo base.robot que contem a request de login/outras importacoes
 Resource    ${EXECDIR}/resources/base.robot
 #Realiza a importacao do arquivo Thanos.py como uma biblioteca atraves do caminho relativo
-Library     ${EXECDIR}/resources/factories/thanos.py
-Library     ${EXECDIR}/resources/factories/spiderMan.py
-#Funciona como um gancho permitindo que a client_key seja usada em varios testes/especificos
-Suite Setup     Run Keywords    Set Client Key      lucas.pdsantos11@gmail.com
-...             AND             Back To The Past
+Library     ${EXECDIR}/resources/factories/avengers.py
+
+Suite Setup     Super Setup     lucas.pdsantos11@gmail.com
 
 *Test Cases*
 Deve cadastrar um personagem
 
-    &{personagem}   Factory Thanos
+    &{personagem}   Factory TonyStark
     ${response}     POST New Character  ${personagem}
 
     #Chamada que valida se a resposta da API veio como o esperado
