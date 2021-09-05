@@ -3,13 +3,13 @@
 # faker = Faker()
 
 #Metodo que retorna um objeto com dados inseridos
-def factory_thanos():
+def factory_spiderMan():
 
     return {
 		#O .faker gera um nome randomico
-        "name": "Thanos de Titã",
-	    "aliases": "Thanos",
-	    "age": 3000,
-	    "team": "Ordem Negra",
-	    "active": False
+        "name": "Peter Parker",
+	    "aliases": "Homem Aranha",
+	    "age": 25,
+	    "team": "Vingadores",
+	    "active": True
     }

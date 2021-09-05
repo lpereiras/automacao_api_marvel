@@ -28,3 +28,7 @@ Set Client Key
     &{HEADERS}          Create Dictionary       client_key=${client_key}
 
     Set Suite Variable      ${HEADERS}
+
+#Funciona como um ponto no tempo onde o banco de dados ainda nao havia sido populado com informacoes
+Back To The Past 
+    DELETE              ${API_URL}/delorean     headers=${HEADERS}     
