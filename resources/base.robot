@@ -3,6 +3,11 @@ Documentation       Iniciando as coisas realmente
 
 #Comandos de importacao das bibliotecas que forem utilizadas 
 Library             RequestsLibrary
+Resource            routes/characters.robot
+
+*Variables*
+#Setando a URL padrao da API utilizada
+${API_URL}          http://marvel.qaninja.academy
 
 *Keywords*
 Set Client Key
@@ -15,7 +20,7 @@ Set Client Key
 
     #Realiza a requisicao do endpoint solicitado 
     ${response}         POST
-    ...                 http://marvel.qaninja.academy/accounts
+    ...                 ${API_URL}/accounts
     ...                 json=${usuario}
 
     #Recupera o valor que retorna no code 200 e armazena em uma variavel
