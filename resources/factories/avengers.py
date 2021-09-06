@@ -1,12 +1,11 @@
 #Importa a biblioteca instalada via terminal 
 # from faker import Faker
 # faker = Faker()
-
+#O .faker gera um elemento randomico que pode ser utilizado em determinadas situacoes
 #Metodo que retorna um objeto com dados inseridos
-def factory_spiderMan():
 
+def factory_spiderMan():
     return {
-		#O .faker gera um nome randomico
         "name": "Peter Parker",
 	    "aliases": "Homem Aranha",
 	    "age": 25,
@@ -15,9 +14,7 @@ def factory_spiderMan():
     }
 
 def factory_tonyStark():
-
     return {
-		#O .faker gera um nome randomico
         "name": "Tony Stark",
 	    "aliases": "Homem de Ferro",
 	    "age": 45,
