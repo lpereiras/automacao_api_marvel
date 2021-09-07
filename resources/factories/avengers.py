@@ -4,11 +4,7 @@
 #O .faker gera um elemento randomico que pode ser utilizado em determinadas situacoes
 #Metodo que retorna um objeto com dados inseridos
 
-<<<<<<< HEAD
 def factory_peterParker():
-=======
-def factory_spiderMan():
->>>>>>> ee1dc659a877255c3afa213d704ff0ce6a7a5087
     return {
         "name": "Peter Parker",
 	    "aliases": "Homem Aranha",
