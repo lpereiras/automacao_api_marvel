@@ -1,6 +1,6 @@
 #Titulo referente ao que vai ser realizado durante o teste (boa pratica)
 *Settings*
-Documentation       Suite de Teste do cadastro de personagens na API da Marvel
+Documentation       Suite de Teste do cadastro dos personagens na API da Marvel
 
 #Palavra reservada para importacao do arquivo base.robot que contem a request de login/outras importacoes
 Resource    ${EXECDIR}/resources/base.robot
@@ -23,7 +23,7 @@ Nao deve cadastrar o personagem
     #[Tags]          dup 
     #Tag que me permite executar apenas um dos casos de teste
     # Dado que o personagem inserido ja existe no sistema
-    ${personagem}   Factory SpiderMan
+    ${personagem}   Factory PeterParker
     ${response}     POST New Character  ${personagem}
 
     #Quando faco a requisicao para a rota /characters
